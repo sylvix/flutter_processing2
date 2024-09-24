@@ -7,10 +7,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' hide Image, TextStyle, TextAlignVertical;
-import 'package:flutter_processing/flutter_processing.dart';
-import 'package:flutter_processing/src/constants/_constants.dart';
-import 'package:flutter_processing/src/math/_random.dart';
-import 'package:flutter_processing/src/math/_trigonometry.dart';
+import 'package:flutter_processing2/flutter_processing.dart';
+import 'package:flutter_processing2/src/constants/_constants.dart';
+import 'package:flutter_processing2/src/math/_random.dart';
+import 'package:flutter_processing2/src/math/_trigonometry.dart';
 import 'package:image/image.dart' as imageFormats;
 import 'package:path/path.dart' as path;
 
