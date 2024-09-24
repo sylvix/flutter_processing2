@@ -56,10 +56,10 @@ void main() {
             setup: (s) {
               s
                 ..noLoop()
-                ..size(width: 200, height: 200);
+                ..size(200, 200);
             },
             draw: (s) {
-              s.circle(center: Offset(100, 100), diameter: 50);
+              s.circle(100, 100, 50);
             },
           ),
         ),

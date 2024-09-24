@@ -1,6 +1,8 @@
 import 'dart:typed_data';
 import 'dart:ui';
 
+final defaultPaint = Paint();
+
 /// Bitmap painter, which forms the core painting APIs for Flutter Processing.
 ///
 /// Clients must adhere to the lifecycle contract of this object.
@@ -20,12 +22,15 @@ import 'dart:ui';
 /// **Produce the final frame image:**
 /// [finishRecording()], which produces the final [publishedImage].
 class SketchPaintingContext {
-  SketchPaintingContext({
-    this.size = const Size(100, 100),
-  });
+  SketchPaintingContext(
+      {this.width = 100, this.height = 100, this.pixelRatio = 1});
 
-  /// The size of the painting region.
-  Size size;
+  int width;
+  int height;
+  double pixelRatio;
+
+  double get finalWidth => width * pixelRatio;
+  double get finalHeight => height * pixelRatio;
 
   late PictureRecorder _recorder;
   late Canvas _canvas;
@@ -71,6 +76,17 @@ class SketchPaintingContext {
   /// The latest image to be produced by this [SketchPaintingContext].
   Image? get publishedImage => _publishedImage;
 
+  void _createCanvas() {
+    _recorder = PictureRecorder();
+    _canvas = Canvas(_recorder);
+
+    if (publishedImage != null) {
+      _canvas.drawImage(publishedImage!, Offset.zero, defaultPaint);
+    }
+
+    _canvas.scale(pixelRatio);
+  }
+
   /// Starts a new frame painting.
   void startRecording() {
     // By default, the fill color is white and the stroke is 1px black.
@@ -84,8 +100,7 @@ class SketchPaintingContext {
 
     _intermediateImage = null;
 
-    _recorder = PictureRecorder();
-    _canvas = Canvas(_recorder);
+    _createCanvas();
   }
 
   /// Does an intermediate rasterization into [intermediateImage] and then
@@ -110,8 +125,8 @@ class SketchPaintingContext {
 
     final pixelsCodec = await ImageDescriptor.raw(
       await ImmutableBuffer.fromUint8List(pixels!.buffer.asUint8List()),
-      width: size.width.round(),
-      height: size.height.round(),
+      width: finalWidth.round(),
+      height: finalHeight.round(),
       pixelFormat: PixelFormat.rgba8888,
     ).instantiateCodec();
 
@@ -132,7 +147,8 @@ class SketchPaintingContext {
     _intermediateImage = await _rasterize();
 
     _recorder = PictureRecorder();
-    _canvas = Canvas(_recorder)..drawImage(_intermediateImage!, Offset.zero, Paint());
+    _canvas = Canvas(_recorder)
+      ..drawImage(_intermediateImage!, Offset.zero, defaultPaint);
 
     _hasUnappliedCanvasCommands = false;
   }
@@ -144,6 +160,7 @@ class SketchPaintingContext {
 
   Future<Image> _rasterize() async {
     final picture = _recorder.endRecording();
-    return await picture.toImage(size.width.round(), size.height.round());
+
+    return await picture.toImage(finalWidth.round(), finalHeight.round());
   }
 }

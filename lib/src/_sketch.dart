@@ -91,7 +91,8 @@ class Sketch extends BaseSketch
     }
 
     _updateElapsedTime(elapsedTime);
-    if (_lastDrawTime != null && (_elapsedTime - _lastDrawTime! < _desiredFrameTime)) {
+    if (_lastDrawTime != null &&
+        (_elapsedTime - _lastDrawTime! < _desiredFrameTime)) {
       return;
     }
 
@@ -124,7 +125,7 @@ class Sketch extends BaseSketch
     _hasDoneSetup = true;
 
     // By default fill the background with a light grey.
-    background(color: _backgroundColor);
+    _setBackgroundColor(_backgroundColor);
 
     await setup();
   }
@@ -134,17 +135,15 @@ class Sketch extends BaseSketch
   }
 
   Future<void> _onDraw() async {
-    if (_paintingContext.publishedImage != null) {
-      _paintingContext.canvas.drawImage(_paintingContext.publishedImage!, Offset.zero, Paint());
-    }
-
     await draw();
 
     _frameCount += 1;
     _lastDrawTime = _elapsedTime;
 
     final secondsFraction = _elapsedTime.inMilliseconds / 1000.0;
-    _actualFrameRate = secondsFraction > 0 ? (_frameCount / secondsFraction).round() : _actualFrameRate;
+    _actualFrameRate = secondsFraction > 0
+        ? (_frameCount / secondsFraction).round()
+        : _actualFrameRate;
   }
 
   FutureOr<void> draw() async {

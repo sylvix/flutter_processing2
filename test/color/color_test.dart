@@ -16,8 +16,9 @@ void main() {
                 s.noLoop();
 
                 s.noStroke();
-                final color = s.color(alpha: 102, comp1: 0, comp2: 126, comp3: 255);
-                s.fill(color: color);
+                final color =
+                    s.color(alpha: 102, comp1: 0, comp2: 126, comp3: 255);
+                s.fill(0, 126, 255, 102);
                 s.rect(rect: Rect.fromLTWH(15, 15, 35, 70));
                 final value = s.alpha(color);
                 s.fill(color: s.color(grey: value));

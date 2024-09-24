@@ -26,8 +26,8 @@ mixin SketchOutputImage on BaseSketch {
     await saveBytesToFile(
       file: file,
       imageData: rawImageData,
-      width: _paintingContext.size.width.round(),
-      height: _paintingContext.size.height.round(),
+      width: _paintingContext.width,
+      height: _paintingContext.height,
     );
   }
 
@@ -60,9 +60,11 @@ mixin SketchOutputImage on BaseSketch {
     if (format != null) {
       imageFormat = format;
     } else {
-      final imageFormatFromFile = _getImageFileFormatFromFilePath(namingPattern);
+      final imageFormatFromFile =
+          _getImageFileFormatFromFilePath(namingPattern);
       if (imageFormatFromFile == null) {
-        throw Exception('Cannot save image to file with invalid extension and no explicit image type: $namingPattern');
+        throw Exception(
+            'Cannot save image to file with invalid extension and no explicit image type: $namingPattern');
       }
       imageFormat = imageFormatFromFile;
     }
@@ -81,7 +83,8 @@ mixin SketchOutputImage on BaseSketch {
     int index = 0;
     late File file;
     do {
-      final fileName = namingPattern.replaceAll(hashMatcher, '$index'.padLeft(digitCount, '0'));
+      final fileName = namingPattern.replaceAll(
+          hashMatcher, '$index'.padLeft(digitCount, '0'));
       file = File('${directory.path}${Platform.pathSeparator}$fileName');
       index += 1;
     } while (file.existsSync());
@@ -110,7 +113,8 @@ Future<void> saveBytesToFile({
   } else {
     final imageFormatFromFile = _getImageFileFormatFromFilePath(file.path);
     if (imageFormatFromFile == null) {
-      throw Exception('Cannot save image to file with invalid extension and no explicit image type: ${file.path}');
+      throw Exception(
+          'Cannot save image to file with invalid extension and no explicit image type: ${file.path}');
     }
     imageFormat = imageFormatFromFile;
   }
@@ -120,19 +124,22 @@ Future<void> saveBytesToFile({
   switch (imageFormat) {
     case ImageFileFormat.png:
       formattedImageData = imageFormats.encodePng(
-        imageFormats.Image.fromBytes(width: width, height: height, bytes: imageData.buffer),
+        imageFormats.Image.fromBytes(
+            width: width, height: height, bytes: imageData.buffer),
       );
       break;
     case ImageFileFormat.jpeg:
       formattedImageData = imageFormats.encodeJpg(
-        imageFormats.Image.fromBytes(width: width, height: height, bytes: imageData.buffer),
+        imageFormats.Image.fromBytes(
+            width: width, height: height, bytes: imageData.buffer),
       );
       break;
     case ImageFileFormat.tiff:
       throw UnimplementedError('Tiff images are not supported in save()');
     case ImageFileFormat.targa:
       formattedImageData = imageFormats.encodeTga(
-        imageFormats.Image.fromBytes(width: width, height: height, bytes: imageData.buffer),
+        imageFormats.Image.fromBytes(
+            width: width, height: height, bytes: imageData.buffer),
       );
       break;
   }

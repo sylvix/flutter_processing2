@@ -1,7 +1,7 @@
 part of '../_core.dart';
 
 mixin SketchShapeAttributes on BaseSketch {
-  void strokeWeight(double newWeight) {
+  void strokeWeight(num newWeight) {
     if (newWeight < 0) {
       throw Exception('Stroke weight must be >= 0');
     }

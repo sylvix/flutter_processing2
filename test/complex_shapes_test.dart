@@ -44,7 +44,7 @@ void main() {
 class StarsSketch extends Sketch {
   @override
   void setup() {
-    size(width: 640, height: 360);
+    size(640, 360);
   }
 
   @override
@@ -88,7 +88,7 @@ class StarsSketch extends Sketch {
 class TriangleStripCircleSketch extends Sketch {
   @override
   void setup() {
-    size(width: 640, height: 360);
+    size(640, 360);
   }
 
   @override

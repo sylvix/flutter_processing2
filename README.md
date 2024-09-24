@@ -10,6 +10,10 @@ Want to see how this project was implemented? Nearly every change was recorded a
 
 To see which Processing APIs have been ported to Flutter, see the [API Checklist](README_API_CHECKLIST.md).
 
+# Flutter Processing 2
+
+This is the fork of original `flutter_processing` project, but with the goal to have all the APIs changed according to the original **Processing** APIs where possible.
+
 ---
 
 Do you get value from this package? Please consider supporting SuperDeclarative!

@@ -30,8 +30,8 @@ class _ImageResizeSketchDemoState extends State<ImageResizeSketchDemo> {
   Sketch createSketch() {
     return Sketch.simple(
       setup: (s) async {
-        s.size(width: 500, height: 500);
-        s.background(color: const Color(0xFFFFFFFF));
+        s.size(500, 500);
+        s.background(255);
 
         _image1 = await s.loadImage("assets/coffee.png");
 
@@ -43,10 +43,13 @@ class _ImageResizeSketchDemoState extends State<ImageResizeSketchDemo> {
       },
       draw: (s) async {
         await s.image(image: _image1);
-        await s.image(image: _image2, origin: Offset((s.width - _image2.width).toDouble(), 0));
+        await s.image(
+            image: _image2,
+            origin: Offset((s.width - _image2.width).toDouble(), 0));
         await s.image(
             image: _image3,
-            origin: Offset((s.width - _image3.width).toDouble(), (s.height - _image3.height).toDouble()));
+            origin: Offset((s.width - _image3.width).toDouble(),
+                (s.height - _image3.height).toDouble()));
       },
     );
   }

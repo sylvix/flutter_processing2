@@ -27,19 +27,19 @@ class _TextSketchDemoState extends State<TextSketchDemo> {
     return Sketch.simple(
       setup: (s) async {
         s
-          ..size(width: 400, height: 400)
-          ..background(color: Colors.black)
-          ..stroke(color: Colors.white)
-          ..fill(color: Colors.white)
+          ..size(400, 400)
+          ..background(0)
+          ..stroke(255)
+          ..fill(255)
           ..textSize(44)
           ..textAlign(TextAlignHorizontal.center, TextAlignVertical.bottom)
-          ..line(const Offset(0, 120), Offset(s.width.toDouble(), 120))
+          ..line(0, 120, s.width, 120)
           ..text("CENTER,BOTTOM", 200, 120)
           ..textAlign(TextAlignHorizontal.center, TextAlignVertical.center)
-          ..line(const Offset(0, 200), Offset(s.width.toDouble(), 200))
+          ..line(0, 200, s.width, 200)
           ..text("CENTER,CENTER", 200, 200)
           ..textAlign(TextAlignHorizontal.center, TextAlignVertical.top)
-          ..line(const Offset(0, 280), Offset(s.width.toDouble(), 280))
+          ..line(0, 280, s.width, 280)
           ..text("CENTER,TOP", 200, 280);
       },
     );
@@ -71,10 +71,10 @@ class _TextLeadingSketchDemoState extends State<TextLeadingSketchDemo> {
     return Sketch.simple(
       setup: (s) async {
         s
-          ..size(width: 400, height: 400)
-          ..stroke(color: Colors.black)
-          ..line(const Offset(0, 100), Offset(s.width.toDouble(), 100))
-          ..fill(color: Colors.black)
+          ..size(400, 400)
+          ..stroke(0)
+          ..line(0, 100, s.width, 100)
+          ..fill(0)
           ..textSize(48)
           ..textLeading(40)
           ..text("L1\nL2\nL3", 40, 100)
@@ -112,14 +112,14 @@ class _TextWidthSketchDemoState extends State<TextWidthSketchDemo> {
     return Sketch.simple(
       setup: (s) async {
         s
-          ..size(width: 400, height: 400)
+          ..size(400, 400)
           ..textSize(112)
           ..textAlign(TextAlignHorizontal.left, TextAlignVertical.bottom)
           ..text("T", 0, 160)
-          ..line(Offset(s.textWidth("T"), 0), Offset(s.textWidth("T"), 200))
+          ..line(s.textWidth("T"), 0, s.textWidth("T"), 200)
           ..textAlign(TextAlignHorizontal.left, TextAlignVertical.top)
           ..text("Tokyo", 0, 240)
-          ..line(Offset(s.textWidth("Tokyo"), 200), Offset(s.textWidth("Tokyo"), 400));
+          ..line(s.textWidth("Tokyo"), 200, s.textWidth("Tokyo"), 400);
       },
     );
   }
@@ -150,7 +150,7 @@ class _TextAscentSketchDemoState extends State<TextAscentSketchDemo> {
     return Sketch.simple(
       setup: (s) async {
         s
-          ..size(width: 400, height: 400)
+          ..size(400, 400)
           ..textAlign(TextAlignHorizontal.left, TextAlignVertical.baseline);
 
         final baseline = s.height * 0.75;
@@ -160,14 +160,14 @@ class _TextAscentSketchDemoState extends State<TextAscentSketchDemo> {
         s.textSize(128);
         final a = s.textAscent() * scalar;
         s
-          ..line(Offset(0, baseline - a), Offset(s.width.toDouble(), baseline - a))
+          ..line(0, baseline - a, s.width, baseline - a)
           ..text("dp", 0, baseline);
 
         // Draw larger text
         s.textSize(256);
         final a2 = s.textAscent() * scalar;
         s
-          ..line(Offset(160, baseline - a2), Offset(s.width.toDouble(), baseline - a2))
+          ..line(160, baseline - a2, s.width, baseline - a2)
           ..text("dp", 160, baseline);
       },
     );
@@ -199,7 +199,7 @@ class _TextDescentSketchDemoState extends State<TextDescentSketchDemo> {
     return Sketch.simple(
       setup: (s) async {
         s
-          ..size(width: 400, height: 400)
+          ..size(400, 400)
           ..textAlign(TextAlignHorizontal.left, TextAlignVertical.baseline);
 
         final baseline = s.height * 0.75;
@@ -209,14 +209,14 @@ class _TextDescentSketchDemoState extends State<TextDescentSketchDemo> {
         s.textSize(128);
         final d = s.textDescent() * scalar;
         s
-          ..line(Offset(0, baseline + d), Offset(s.width.toDouble(), baseline + d))
+          ..line(0, baseline + d, s.width, baseline + d)
           ..text("dp", 0, baseline);
 
         // Draw larger text
         s.textSize(256);
         final d2 = s.textDescent() * scalar;
         s
-          ..line(Offset(160, baseline + d2), Offset(s.width.toDouble(), baseline + d2))
+          ..line(160, baseline + d2, s.width.toDouble(), baseline + d2)
           ..text("dp", 160, baseline);
       },
     );

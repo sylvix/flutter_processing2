@@ -2,7 +2,8 @@ part of '../_core.dart';
 
 mixin SketchEnvironment on BaseSketch, SketchColorSetting {
   Duration _elapsedTime = Duration.zero;
-  void _updateElapsedTime(Duration newElapsedTime) => _elapsedTime = newElapsedTime;
+  void _updateElapsedTime(Duration newElapsedTime) =>
+      _elapsedTime = newElapsedTime;
 
   Duration? _lastDrawTime;
 
@@ -17,23 +18,31 @@ mixin SketchEnvironment on BaseSketch, SketchColorSetting {
     _desiredFrameTime = Duration(milliseconds: (1000.0 / frameRate).floor());
   }
 
-  int _desiredWidth = 100;
-  int _desiredHeight = 100;
+  var _desiredWidth = 100;
+  var _desiredHeight = 100;
   VoidCallback? _onSizeChanged;
 
   int get width => _desiredWidth;
 
   int get height => _desiredHeight;
 
-  void size({
-    required int width,
-    required int height,
-  }) {
-    _desiredWidth = width;
-    _desiredHeight = height;
-    _paintingContext.size = Size(width.toDouble(), height.toDouble());
+  void _setSize(int w, int h) {
+    _desiredWidth = w;
+    _desiredHeight = h;
+    _paintingContext.width = w;
+    _paintingContext.height = h;
     _onSizeChanged?.call();
+  }
 
-    background(color: _backgroundColor);
+  void size(int width, int height) {
+    _setSize(width, height);
+    _setBackgroundColor(_backgroundColor);
+  }
+
+  void fullScreen() {
+    FlutterView view = WidgetsBinding.instance.platformDispatcher.views.first;
+    final size = view.physicalSize / view.devicePixelRatio;
+    _setSize(size.width.floor(), size.height.floor());
+    _setBackgroundColor(_backgroundColor);
   }
 }
