@@ -1,4 +1,4 @@
-library flutter_processing;
+library flutter_processing2;
 
 export 'src/_core.dart';
 export 'src/color/_color.dart';

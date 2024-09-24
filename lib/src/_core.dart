@@ -1,13 +1,12 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' hide Image, TextStyle, TextAlignVertical;
-import 'package:flutter_processing2/flutter_processing.dart';
+import 'package:flutter_processing2/flutter_processing2.dart';
 import 'package:flutter_processing2/src/constants/_constants.dart';
 import 'package:flutter_processing2/src/math/_random.dart';
 import 'package:flutter_processing2/src/math/_trigonometry.dart';

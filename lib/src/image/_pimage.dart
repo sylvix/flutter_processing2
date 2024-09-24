@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/painting.dart';
-import 'package:flutter_processing2/flutter_processing.dart';
+import 'package:flutter_processing2/flutter_processing2.dart';
 
 /// An image in Processing.
 ///
