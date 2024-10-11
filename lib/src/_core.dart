@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
+import 'dart:math';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' hide Image, TextStyle, TextAlignVertical;
 import 'package:flutter_processing2/flutter_processing2.dart';
-import 'package:flutter_processing2/src/constants/_constants.dart';
 import 'package:flutter_processing2/src/math/_random.dart';
 import 'package:flutter_processing2/src/math/_trigonometry.dart';
 import 'package:image/image.dart' as imageFormats;
@@ -20,6 +20,7 @@ import 'math/_calculations.dart';
 
 part '_processing_widget.dart';
 part '_sketch.dart';
+part 'constants/_constants.dart';
 part 'color/_setting.dart';
 part 'environment/_environment.dart';
 part 'input/_keyboard.dart';

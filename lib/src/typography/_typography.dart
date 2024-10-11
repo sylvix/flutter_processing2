@@ -4,31 +4,43 @@ mixin SketchTypography on BaseSketch {
   String? _fontName;
   double _fontSize = 24;
   double? _textLeading;
-  TextAlignHorizontal _textAlignHorizontal = TextAlignHorizontal.left;
-  TextAlignVertical _textAlignVertical = TextAlignVertical.top;
+  String _textAlignHorizontal = LEFT;
+  String _textAlignVertical = TOP;
 
-  void createFont() {
-    throw UnimplementedError(
-        "You don't need to 'createFont()' in flutter_processing. Instead, use the standard Flutter font configurations in pubspec.yaml.");
+  TextAlign _toFlutterAlign(String alignment) {
+    switch (alignment) {
+      case LEFT:
+        return TextAlign.left;
+      case CENTER:
+        return TextAlign.center;
+      case RIGHT:
+        return TextAlign.right;
+      default:
+        throw Exception('$alignment is not supported!');
+    }
   }
 
-  void loadFont() {
-    throw UnimplementedError(
-        "You don't need to 'loadFont()' in flutter_processing. Instead, use the standard Flutter font configurations in pubspec.yaml.");
-  }
-
-  /// Set the font used to render text by providing a [fontName].
+  /// Sets the current font that will be drawn with the [text()] function.
+  /// Use the standard Flutter configuration in `pubspec.yaml` file to add new fonts.
+  ///
+  /// The font set through [textFont()] will be used in all subsequent calls to the [text()] function.
+  /// If no size parameter is specified, the font size defaults to `24`.
   void textFont(String fontName) {
     _fontName = fontName;
   }
 
-  /// Paint the given [text] at the given ([x],[y]), using the current
-  /// horizontal and vertical text alignment and text size.
-  void text(String text, double x, double y) {
+  /// Draws text to the screen.
+  /// Displays the information specified in the first parameter on the screen in the position specified by the additional parameters.
+  /// A default font will be used unless a font is set with the [textFont()] function
+  /// and a default size will be used unless a font is set with [textSize()].
+  /// Change the color of the text with the [fill()] function.
+  /// The text displays in relation to the [textAlign()] function,
+  /// which gives the option to draw to the left, right, and center of the coordinates.
+  void text(String text, num x, num y) {
     final paragraphBuilder = ParagraphBuilder(ParagraphStyle(
       fontFamily: _fontName,
       fontSize: _fontSize,
-      textAlign: _textAlignHorizontal.toFlutterAlign(),
+      textAlign: _toFlutterAlign(_textAlignHorizontal),
     ))
       ..pushStyle(TextStyle(
         color: _paintingContext.fillPaint.color,
@@ -43,35 +55,37 @@ mixin SketchTypography on BaseSketch {
     late double textX;
     late double textY;
     switch (_textAlignHorizontal) {
-      case TextAlignHorizontal.left:
-        textX = x;
+      case LEFT:
+        textX = x.toDouble();
         break;
-      case TextAlignHorizontal.center:
+      case CENTER:
         textX = x - (paragraph.maxIntrinsicWidth / 2);
         break;
-      case TextAlignHorizontal.right:
+      case RIGHT:
         textX = x - paragraph.maxIntrinsicWidth;
         break;
     }
 
     switch (_textAlignVertical) {
-      case TextAlignVertical.top:
+      case TOP:
         // We adjust the top alignment to deal with leading. Flutter applies extra
         // leading to the first line of text, but Processing wants the top of the
         // first line to sit exactly on the given `y` value. We do our best to
         // correct for that, here.
-        final firstCharacterHeight = paragraph.getBoxesForRange(0, 1).first.toRect().height;
-        final leadingAdjustment = _textLeading != null ? (_textLeading! - firstCharacterHeight) : 0;
+        final firstCharacterHeight =
+            paragraph.getBoxesForRange(0, 1).first.toRect().height;
+        final leadingAdjustment =
+            _textLeading != null ? (_textLeading! - firstCharacterHeight) : 0;
 
-        textY = y - leadingAdjustment;
+        textY = (y - leadingAdjustment).toDouble();
         break;
-      case TextAlignVertical.center:
+      case CENTER:
         textY = y - (paragraph.height / 2);
         break;
-      case TextAlignVertical.baseline:
+      case BASELINE:
         textY = y - paragraph.alphabeticBaseline;
         break;
-      case TextAlignVertical.bottom:
+      case BOTTOM:
         textY = y - paragraph.height;
         break;
     }
@@ -79,31 +93,54 @@ mixin SketchTypography on BaseSketch {
     _paintingContext.canvas.drawParagraph(paragraph, Offset(textX, textY));
   }
 
-  /// Set the horizontal and vertical text alignment for text that's painted
-  /// with the [text()] method.
-  void textAlign(TextAlignHorizontal horizontalAlignment, [TextAlignVertical? verticalAlignment]) {
+  /// Sets the current alignment for drawing text.
+  /// The parameters [LEFT], [CENTER], and [RIGHT] set the display characteristics of the letters in relation
+  /// to the values for the x and y parameters of the [text()] function.
+  ///
+  /// An optional second parameter can be used to vertically align the text.
+  /// [BASELINE] is the default, and the vertical alignment will be reset to [BASELINE] if the second parameter is not used.
+  /// The [TOP] and [CENTER] parameters are straightforward. The [BOTTOM] parameter offsets the line based on the current [textDescent()].
+  /// For multiple lines, the final line will be aligned to the bottom, with the previous lines appearing above it.
+  ///
+  /// The vertical alignment is based on the value of [textAscent()], which many fonts do not specify correctly.
+  /// It may be necessary to use a hack and offset by a few pixels by hand so that the offset looks correct.
+  /// To do this as less of a hack, use some percentage of [textAscent()] or [textDescent()] so that the hack works even if you change the size of the font.
+  void textAlign(String horizontalAlignment, [String? verticalAlignment]) {
+    if (![LEFT, CENTER, RIGHT].contains(horizontalAlignment)) {
+      throw Exception(
+          '$horizontalAlignment is not a valid horizontal text alignment! Only LEFT, CENTER and RIGHT are supported!');
+    }
+    if (verticalAlignment != null &&
+        ![TOP, BOTTOM, CENTER, BASELINE].contains(verticalAlignment)) {
+      throw Exception(
+          '$verticalAlignment is not a valid vertical text alignment! Only TOP, BOTTOM, CENTER and BASELINE are supported!');
+    }
     _textAlignHorizontal = horizontalAlignment;
-    _textAlignVertical = verticalAlignment ?? TextAlignVertical.baseline;
+    _textAlignVertical = verticalAlignment ?? BASELINE;
   }
 
-  /// Sets the leading for text that is painted with the [text()] method.
-  void textLeading(double leading) {
-    _textLeading = leading;
+  /// Sets the spacing between lines of text in units of pixels.
+  /// This setting will be used in all subsequent calls to the [text()] function.
+  /// Note, however, that the leading is reset by [textSize()].
+  /// For example, if the leading is set to `20` with `textLeading(20)`,
+  /// then if `textSize(48)` is run at a later point, the leading will be reset to the default for the text size of `48`.
+  void textLeading(num leading) {
+    _textLeading = leading.toDouble();
   }
 
-  /// Sets the size of the text that is painted with the [text()] method.
-  void textSize(double fontSize) {
-    _fontSize = fontSize;
+  /// Sets the current font size.
+  /// This size will be used in all subsequent calls to the [text()] function. Font size is measured in units of pixels.
+  void textSize(num fontSize) {
+    _fontSize = fontSize.toDouble();
     _textLeading = null;
   }
 
-  /// Calculates and returns the width of the given [text], sized and spaced
-  /// based on the current text configuration.
+  /// Calculates and returns the width of any character or text string.
   double textWidth(String text) {
     final paragraphBuilder = ParagraphBuilder(ParagraphStyle(
       fontFamily: _fontName,
       fontSize: _fontSize,
-      textAlign: _textAlignHorizontal.toFlutterAlign(),
+      textAlign: _toFlutterAlign(_textAlignHorizontal),
     ))
       ..pushStyle(TextStyle(
         color: _paintingContext.fillPaint.color,
@@ -116,12 +153,13 @@ mixin SketchTypography on BaseSketch {
     return paragraph.maxIntrinsicWidth;
   }
 
-  /// Returns the ascent length for the current font, at the current font size.
+  /// Returns ascent of the current font at its current size.
+  /// This information is useful for determining the height of the font above the baseline.
   double textAscent() {
     final paragraphBuilder = ParagraphBuilder(ParagraphStyle(
       fontFamily: _fontName,
       fontSize: _fontSize,
-      textAlign: _textAlignHorizontal.toFlutterAlign(),
+      textAlign: _toFlutterAlign(_textAlignHorizontal),
     ))
       ..pushStyle(TextStyle(
         color: _paintingContext.fillPaint.color,
@@ -136,12 +174,13 @@ mixin SketchTypography on BaseSketch {
     return paragraph.computeLineMetrics().first.ascent;
   }
 
-  /// Returns the descent length for the current font, at the current font size.
+  /// Returns descent of the current font at its current size.
+  /// This information is useful for determining the height of the font below the baseline.
   double textDescent() {
     final paragraphBuilder = ParagraphBuilder(ParagraphStyle(
       fontFamily: _fontName,
       fontSize: _fontSize,
-      textAlign: _textAlignHorizontal.toFlutterAlign(),
+      textAlign: _toFlutterAlign(_textAlignHorizontal),
     ))
       ..pushStyle(TextStyle(
         color: _paintingContext.fillPaint.color,
@@ -155,34 +194,4 @@ mixin SketchTypography on BaseSketch {
 
     return paragraph.computeLineMetrics().first.descent;
   }
-
-  void textMode() {
-    throw UnimplementedError("Flutter only supports one text painting mode, and it's SKIA-based rendering.");
-  }
-}
-
-enum TextAlignHorizontal {
-  left,
-  center,
-  right,
-}
-
-extension on TextAlignHorizontal {
-  TextAlign toFlutterAlign() {
-    switch (this) {
-      case TextAlignHorizontal.left:
-        return TextAlign.left;
-      case TextAlignHorizontal.center:
-        return TextAlign.center;
-      case TextAlignHorizontal.right:
-        return TextAlign.right;
-    }
-  }
-}
-
-enum TextAlignVertical {
-  top,
-  center,
-  baseline,
-  bottom,
 }
