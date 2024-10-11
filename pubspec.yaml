@@ -1,7 +1,8 @@
 name: flutter_processing2
 description: A Flutter version of Processing.
-version: 2.0.0-dev.2
-homepage: https://github.com/sylvix/flutter_processing2
+version: 2.0.0-dev.3
+homepage: https://sylvix.github.io/flutter_processing2
+repository: https://github.com/sylvix/flutter_processing2
 
 environment:
   sdk: ">=2.12.0 <4.0.0"
