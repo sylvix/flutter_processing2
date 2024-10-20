@@ -13,3 +13,29 @@ The actual noise structure is similar to that of an audio signal, in respect to 
 Another way to adjust the character of the resulting sequence is the scale of the input coordinates. As the function works within an infinite space, the value of the coordinates doesn't matter as such; only the distance between successive coordinates is important (such as when using noise() within a loop). As a general rule, the smaller the difference between coordinates, the smoother the resulting noise sequence. Steps of 0.005-0.03 work best for most applications, but this will differ depending on use.
 
 There have been debates over the accuracy of the implementation of noise in Processing. For clarification, it's an implementation of "classic Perlin noise" from 1983, and not the newer "simplex noise" method from 2001.
+
+## Examples
+
+```dart
+float xoff = 0.0;
+
+void draw() {
+  background(204);
+  xoff = xoff + .01;
+  float n = noise(xoff) * width;
+  line(n, 0, n, height);
+}
+```
+
+```dart
+float noiseScale = 0.02;
+
+void draw() {
+  background(0);
+  for (int x=0; x < width; x++) {
+    float noiseVal = noise((mouseX+x)*noiseScale, mouseY*noiseScale);
+    stroke(noiseVal*255);
+    line(x, mouseY+noiseVal*80, x, height);
+  }
+}
+```
