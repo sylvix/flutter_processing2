@@ -31,100 +31,114 @@ https://github.com/sylvix/sketch_app
 # Reference
 
 ## Environment
-| Feature | Description |
-|---|---|
-| [`frameCount`](environment/frameCount.md) | The property that contains the number of frames displayed since the program started |
-| [`frameRate`](environment/frameRate.md) | |
-| [`set frameRate`](environment/set_frameRate.md) | |
-| [`width`](environment/width.md) | |
-| [`height`](environment/height.md) | |
-| [`size()`](environment/size.md) | |
-| [`fullScreen()`](environment/fullScreen.md) | |
+
+| Feature                                         | Description                                                                         |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [`frameCount`](environment/frameCount.md)       | The property that contains the number of frames displayed since the program started |
+| [`frameRate`](environment/frameRate.md)         | The contains the approximate frame rate of the software as it executes              |
+| [`set frameRate`](environment/set_frameRate.md) | Specifies the number of frames to be displayed every second                         |
+| [`width`](environment/width.md)                 | Variable which stores the width of the display window                               |
+| [`height`](environment/height.md)               | Variable which stores the height of the display window                              |
+| [`size()`](environment/size.md)                 | Defines the dimension of the display window in units of pixels                      |
+| [`fullScreen()`](environment/fullScreen.md)     | Opens a sketch using the full size of the computer's display                        |
 
 ## Color
+
 ### Setting
-| Feature | Description |
-|---|---|
-| [`background()`](color/setting/background.md) | |
-| [`fill()`](color/setting/fill.md) | |
-| [`noFill()`](color/setting/noFill.md) | |
-| [`stroke()`](color/setting/stroke.md) | |
-| [`noStroke()`](color/setting/noStroke.md) | |
-| [`clear()`](color/setting/clear.md) | |
+
+| Feature                                       | Description                                                     |
+| --------------------------------------------- | --------------------------------------------------------------- |
+| [`background()`](color/setting/background.md) | Sets the color used for the background of the Processing window |
+| [`fill()`](color/setting/fill.md)             | Sets the color used to fill shapes                              |
+| [`noFill()`](color/setting/noFill.md)         | Disables filling geometry                                       |
+| [`stroke()`](color/setting/stroke.md)         | Sets the color used to draw lines and borders around shapes     |
+| [`noStroke()`](color/setting/noStroke.md)     | Disables drawing the stroke (outline)                           |
+| [`clear()`](color/setting/clear.md)           | Clears the pixels within a buffer                               |
 
 ## Shape
+
 ### Attributes
-| Feature | Description |
-|---|---|
-| [`strokeWeight()`](shape/attributes/strokeWeight.md) | |
-| [`ellipseMode()`](shape/attributes/ellipseMode.md) | |
-| [`rectMode()`](shape/attributes/rectMode.md) | |
+
+| Feature                                              | Description                                                                       |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------- |
+| [`strokeWeight()`](shape/attributes/strokeWeight.md) | Sets the width of the stroke used for lines, points, and the border around shapes |
+| [`ellipseMode()`](shape/attributes/ellipseMode.md)   | The origin of the ellipse is modified by the ellipseMode() function               |
+| [`rectMode()`](shape/attributes/rectMode.md)         | Modifies the location from which rectangles draw                                  |
+
 ### 2D Primitives
-| Feature | Description |
-|---|---|
-| [`point()`](shape/two_d_primitives/point.md) | |
-| [`line()`](shape/two_d_primitives/line.md) | |
-| [`circle()`](shape/two_d_primitives/circle.md) | |
-| [`ellipse()`](shape/two_d_primitives/ellipse.md) | |
-| [`arc()`](shape/two_d_primitives/arc.md) | |
-| [`square()`](shape/two_d_primitives/square.md) | |
-| [`rect()`](shape/two_d_primitives/rect.md) | |
-| [`triangle()`](shape/two_d_primitives/triangle.md) | |
-| [`quad()`](shape/two_d_primitives/quad.md) | |
+
+| Feature                                            | Description                                                        |
+| -------------------------------------------------- | ------------------------------------------------------------------ |
+| [`point()`](shape/two_d_primitives/point.md)       | Draws a point, a coordinate in space at the dimension of one pixel |
+| [`line()`](shape/two_d_primitives/line.md)         | Draws a line (a direct path between two points) to the screen      |
+| [`circle()`](shape/two_d_primitives/circle.md)     | Draws a circle to the screen                                       |
+| [`ellipse()`](shape/two_d_primitives/ellipse.md)   | Draws an ellipse (oval) in the display window                      |
+| [`arc()`](shape/two_d_primitives/arc.md)           | Draws an arc in the display window                                 |
+| [`square()`](shape/two_d_primitives/square.md)     | Draws a square to the screen                                       |
+| [`rect()`](shape/two_d_primitives/rect.md)         | Draws a rectangle to the screen                                    |
+| [`triangle()`](shape/two_d_primitives/triangle.md) | A triangle is a plane created by connecting three points           |
+| [`quad()`](shape/two_d_primitives/quad.md)         | A quad is a quadrilateral, a four sided polygon                    |
 
 ## Input
+
 ### Mouse
-| Feature | Description |
-|---|---|
-| [`mouseX`](input/mouse/mouseX.md) | |
-| [`mouseY`](input/mouse/mouseY.md) | |
-| [`pmouseX`](input/mouse/pmouseX.md) | |
-| [`pmouseY`](input/mouse/pmouseY.md) | |
-| [`mouseButton`](input/mouse/mouseButton.md) | |
-| [`isMousePressed`](input/mouse/isMousePressed.md) | |
-| [`mousePressed()`](input/mouse/mousePressed.md) | |
-| [`mouseDragged()`](input/mouse/mouseDragged.md) | |
-| [`mouseReleased()`](input/mouse/mouseReleased.md) | |
-| [`mouseClicked()`](input/mouse/mouseClicked.md) | |
-| [`mouseMoved()`](input/mouse/mouseMoved.md) | |
-| [`mouseWheel()`](input/mouse/mouseWheel.md) | |
+
+| Feature                                           | Description                                                                                                       |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| [`mouseX`](input/mouse/mouseX.md)                 | The property that always contains the current horizontal coordinate of the mouse                                  |
+| [`mouseY`](input/mouse/mouseY.md)                 | The property that always contains the current vertical coordinate of the mouse                                    |
+| [`pmouseX`](input/mouse/pmouseX.md)               | The property that always contains the horizontal position of the mouse in the frame previous to the current frame |
+| [`pmouseY`](input/mouse/pmouseY.md)               | The property that always contains the vertical position of the mouse in the frame previous to the current frame   |
+| [`mouseButton`](input/mouse/mouseButton.md)       | Shows which mouse button is pressed                                                                               |
+| [`isMousePressed`](input/mouse/isMousePressed.md) | Variable storing if a mouse button is pressed                                                                     |
+| [`mousePressed()`](input/mouse/mousePressed.md)   | Called once after every time a mouse button is pressed                                                            |
+| [`mouseDragged()`](input/mouse/mouseDragged.md)   | Called once every time the mouse moves and a mouse button is pressed                                              |
+| [`mouseReleased()`](input/mouse/mouseReleased.md) | Called every time a mouse button is released                                                                      |
+| [`mouseClicked()`](input/mouse/mouseClicked.md)   | Called once after a mouse button has been pressed and then released                                               |
+| [`mouseMoved()`](input/mouse/mouseMoved.md)       | Called every time the mouse moves and a mouse button is not pressed                                               |
+| [`mouseWheel()`](input/mouse/mouseWheel.md)       | The code within the mouseWheel() event function is run when the mouse wheel is moved                              |
 
 ## Math
+
 ### Random
-| Feature | Description |
-|---|---|
-| [`randomSeed()`](math/random/randomSeed.md) | |
-| [`random()`](math/random/random.md) | |
-| [`noiseSeed()`](math/random/noiseSeed.md) | |
-| [`noiseDetail()`](math/random/noiseDetail.md) | |
-| [`noise()`](math/random/noise.md) | |
-| [`randomGaussian()`](math/random/randomGaussian.md) | |
+
+| Feature                                             | Description                                                                                    |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [`randomSeed()`](math/random/randomSeed.md)         | Sets the seed value for random()                                                               |
+| [`random()`](math/random/random.md)                 | Generates random numbers                                                                       |
+| [`noiseSeed()`](math/random/noiseSeed.md)           | Sets the seed value for noise()                                                                |
+| [`noiseDetail()`](math/random/noiseDetail.md)       | Adjusts the character and level of detail produced by the Perlin noise function                |
+| [`noise()`](math/random/noise.md)                   | Returns the Perlin noise value at specified coordinates                                        |
+| [`randomGaussian()`](math/random/randomGaussian.md) | Returns a float from a random series of numbers having a mean of 0 and standard deviation of 1 |
 
 ## Constants
-| Feature | Description |
-|---|---|
-| [`HALF_PI`](constants/HALF_PI.md) | |
-| [`PI`](constants/PI.md) | |
-| [`QUARTER_PI`](constants/QUARTER_PI.md) | |
-| [`TAU`](constants/TAU.md) | |
-| [`TWO_PI`](constants/TWO_PI.md) | |
+
+| Feature                                 | Description                                                              |
+| --------------------------------------- | ------------------------------------------------------------------------ |
+| [`HALF_PI`](constants/HALF_PI.md)       | HALF_PI is a mathematical constant with the value 1.57079632679489661923 |
+| [`PI`](constants/PI.md)                 | PI is a mathematical constant with the value 3.14159265358979323846      |
+| [`QUARTER_PI`](constants/QUARTER_PI.md) | QUARTER_PI is a mathematical constant with the value 0.7853982           |
+| [`TAU`](constants/TAU.md)               | An alias for TWO_PI                                                      |
+| [`TWO_PI`](constants/TWO_PI.md)         | TWO_PI is a mathematical constant with the value 6.28318530717958647693  |
 
 ## Structure
-| Feature | Description |
-|---|---|
-| [`setup()`](structure/setup.md) | |
-| [`draw()`](structure/draw.md) | |
-| [`loop()`](structure/loop.md) | |
-| [`noLoop()`](structure/noLoop.md) | |
+
+| Feature                           | Description                                                                                                                                             |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`setup()`](structure/setup.md)   | The setup() function is called once when the program starts                                                                                             |
+| [`draw()`](structure/draw.md)     | Called directly after setup() and continuously executes the lines of code contained inside its block until the program is stopped or noLoop() is called |
+| [`loop()`](structure/loop.md)     | Causes Processing to continuously execute the code within draw()                                                                                        |
+| [`noLoop()`](structure/noLoop.md) | Stops Processing from continuously executing the code within draw()                                                                                     |
 
 ## Typography
-| Feature | Description |
-|---|---|
-| [`text`](typography/text.md) | |
-| [`textAlign`](typography/textAlign.md) | |
-| [`textAscent`](typography/textAscent.md) | |
-| [`textDescent`](typography/textDescent.md) | |
-| [`textFont`](typography/textFont.md) | |
-| [`textLeading`](typography/textLeading.md) | |
-| [`textSize`](typography/textSize.md) | |
-| [`textWidth`](typography/textWidth.md) | |
+
+| Feature                                      | Description                                                       |
+| -------------------------------------------- | ----------------------------------------------------------------- |
+| [`text()`](typography/text.md)               | Draws text to the screen                                          |
+| [`textAlign()`](typography/textAlign.md)     | Sets the current alignment for drawing text                       |
+| [`textAscent()`](typography/textAscent.md)   | Returns ascent of the current font at its current size            |
+| [`textDescent()`](typography/textDescent.md) | Returns descent of the current font at its current size           |
+| [`textFont()`](typography/textFont.md)       | Sets the current font that will be drawn with the text() function |
+| [`textLeading()`](typography/textLeading.md) | Sets the spacing between lines of text in units of pixels         |
+| [`textSize()`](typography/textSize.md)       | Sets the current font size                                        |
+| [`textWidth()`](typography/textWidth.md)     | Calculates and returns the width of any character or text string  |
