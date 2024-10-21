@@ -13,3 +13,24 @@ For example, running `size(640, 480)` will assign 640 to the `width` variable an
 If `size()` is not used, the sketch will be given a default size of 100 x 100 pixels.
 
 To run a sketch that fills the screen, use the `fullScreen()` function
+
+## Examples
+
+```dart
+
+size(200, 100);
+background(153);
+line(0, 0, width, height);
+```
+
+```dart
+
+void setup() {
+  size(320, 240);
+}
+
+void draw() {
+  background(153);
+  line(0, 0, width, height);
+}
+```
