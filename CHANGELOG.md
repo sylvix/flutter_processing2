@@ -9,3 +9,5 @@
 ## [2.0.0-dev.2] - Added documentation with Docsify, changed more APIs (Oct 12, 2024)
 
 ## [2.0.0-dev.3] - Updated meta information (Oct 12, 2024)
+
+## [2.0.0-dev.4] - Updated docs, fixed rect APIs (Oct 22, 2024)
