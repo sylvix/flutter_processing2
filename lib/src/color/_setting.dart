@@ -18,7 +18,7 @@ mixin SketchColorSetting on BaseSketch {
     _paintingContext.markHasUnappliedCanvasCommands();
   }
 
-  Color _getColorFromRGBA(int color1, [int? color2, int? color3, int? color4]) {
+  Color _getColorFromRGBA(num color1, [num? color2, num? color3, num? color4]) {
     if (color2 == null && (color3 != null || color4 != null)) {
       throw Exception(
         'Wrong color parameters. Second parameter cannot be null if third or fourth are present',
@@ -33,17 +33,20 @@ mixin SketchColorSetting on BaseSketch {
     Color color;
 
     if (color2 == null) {
-      color = Color.fromARGB(255, color1, color1, color1);
+      color =
+          Color.fromARGB(255, color1.toInt(), color1.toInt(), color1.toInt());
     } else if (color3 == null) {
-      color = Color.fromARGB(color2, color1, color1, color1);
+      color = Color.fromARGB(
+          color2.toInt(), color1.toInt(), color1.toInt(), color1.toInt());
     } else {
       var alpha = 255;
 
       if (color4 != null) {
-        alpha = color4;
+        alpha = color4.toInt();
       }
 
-      color = Color.fromARGB(alpha, color1, color2, color3);
+      color =
+          Color.fromARGB(alpha, color1.toInt(), color2.toInt(), color3.toInt());
     }
     return color;
   }
@@ -79,7 +82,7 @@ mixin SketchColorSetting on BaseSketch {
   /// Sets the color used to fill shapes.
   /// For example, if you run `fill(204, 102, 0)`, all subsequent shapes will be filled with orange.
   /// The default color space is RGB, with each value in the range from 0 to 255.
-  void fill(int color1, [int? color2, int? color3, int? color4]) {
+  void fill(num color1, [num? color2, num? color3, num? color4]) {
     final color = _getColorFromRGBA(color1, color2, color3, color4);
     _paintingContext.fillPaint.color = color;
   }
@@ -92,7 +95,7 @@ mixin SketchColorSetting on BaseSketch {
 
   /// Sets the color used to draw lines and borders around shapes.
   /// The default color space is RGB, with each value in the range from 0 to 255.
-  void stroke(int color1, [int? color2, int? color3, int? color4]) {
+  void stroke(num color1, [num? color2, num? color3, num? color4]) {
     final color = _getColorFromRGBA(color1, color2, color3, color4);
     _paintingContext.strokePaint.color = color;
   }

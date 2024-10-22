@@ -194,7 +194,7 @@ mixin SketchShapeTwoDPrimitives on BaseSketch, SketchShapeAttributes {
   void rect(num a, num b, num c, num d, [num? tl, num? tr, num? br, num? bl]) {
     final radiusPresent = tl != null;
     final countOfOtherRadii =
-        [tr, br, bl].map((e) => e != null).toList().length;
+        [tr, br, bl].where((e) => e != null).toList().length;
     final allOtherRadiiPresent = countOfOtherRadii == 3;
     final someOtherRadiiPresent =
         countOfOtherRadii == 1 || countOfOtherRadii == 2;

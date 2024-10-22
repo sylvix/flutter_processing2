@@ -24,11 +24,13 @@ mixin SketchMathRandom {
   /// For example, `random(-5, 10.2)` returns values starting at -5 and up to (but not including) 10.2.
   /// To convert a floating-point random number to an integer, use the [toInt()] method.
   double random(num bound1, [num? bound2]) {
-    final lowerBound = bound2 != null ? bound1 : 0;
-    final upperBound = bound2 != null ? bound2 : bound1;
+    num lowerBound = bound2 != null ? bound1 : 0;
+    num upperBound = bound2 != null ? bound2 : bound1;
 
     if (upperBound < lowerBound) {
-      throw Exception('random() lower bound must be less than upper bound');
+      num tmp = lowerBound;
+      lowerBound = upperBound;
+      upperBound = tmp;
     }
 
     return _random.nextDouble() * (upperBound - lowerBound) + lowerBound;
