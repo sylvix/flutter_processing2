@@ -18,4 +18,4 @@ rect(120, 80, 220, 220);
 
 ## Output
 
-<img src="/_images/noFill_1.png" width="400" height="400" />
+<img src="./_images/noFill_1.png" width="400" height="400" />

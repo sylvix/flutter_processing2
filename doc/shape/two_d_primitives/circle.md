@@ -16,4 +16,4 @@ circle(224, 184, 220);
 
 ## Output
 
-<img src="/_images/circle_1.png" width="400" height="400" />
+<img src="./_images/circle_1.png" width="400" height="400" />

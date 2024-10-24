@@ -15,4 +15,4 @@ triangle(120, 80, 220, 160, 320, 80); // Рисуем треугольник с 
 
 ## Резултат
 
-<img src="/_images/triangle_1.png" width="400" height="400" />
+<img src="./_images/triangle_1.png" width="400" height="400" />

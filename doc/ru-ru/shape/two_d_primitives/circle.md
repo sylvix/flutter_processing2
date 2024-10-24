@@ -16,4 +16,4 @@ circle(224, 184, 220);  // Рисуем круг с центром в (224, 184)
 
 ## Результат
 
-<img src="/_images/circle_1.png" width="400" height="400" />
+<img src="./_images/circle_1.png" width="400" height="400" />

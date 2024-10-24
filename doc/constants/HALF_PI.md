@@ -21,4 +21,4 @@ arc(x, y, d-240, d-240, 0, TWO_PI);
 
 ## Output
 
-<img src="/_images/half_pi_1.png" width="400" height="400" />
+<img src="./_images/half_pi_1.png" width="400" height="400" />

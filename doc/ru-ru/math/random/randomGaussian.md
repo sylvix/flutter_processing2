@@ -13,7 +13,7 @@ double randomGaussian([num mean = 0, num standardDeviation = 1])
 ```dart
 size(400, 400);
 for (int y = 0; y < 400; y++) {
-    float x = randomGaussian() * 60; // Получаем значение из гауссовского распределения и масштабируем его
+    float x = randomGaussian() * 60;
     line(200, y, 200 + x, y); // Рисуем горизонтальную линию с отклонением
 }
 
@@ -21,7 +21,7 @@ for (int y = 0; y < 400; y++) {
 
 ## Результат 1
 
-<img src="/_images/randomGaussian_1.png" width="400" height="400" />
+<img src="./_images/randomGaussian_1.png" width="400" height="400" />
 
 ## Пример 2
 
@@ -31,7 +31,7 @@ float[] distribution = new float[360];
 void setup() {
   size(400, 400);
   for (int i = 0; i < distribution.length; i++) {
-    distribution[i] = int(randomGaussian() * 60); // Заполняем массив значениями из гауссовского распределения
+    distribution[i] = int(randomGaussian() * 60);
   }
 }
 
@@ -51,4 +51,4 @@ void draw() {
 
 ## Результат 2
 
-<img src="/_images/randomGaussian_2.png" width="400" height="400" />
+<img src="./_images/randomGaussian_2.png" width="400" height="400" />

@@ -21,4 +21,4 @@ rect(0, 240, width/2, 80); // Рисуем прямоугольник, шири�
 
 ## Output
 
-<img src="/_images/height_1.png" width="400" height="400" />
+<img src="./_images/height_1.png" width="400" height="400" />

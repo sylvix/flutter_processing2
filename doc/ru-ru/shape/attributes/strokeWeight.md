@@ -23,4 +23,4 @@ line(80, 280, 320, 280); // Рисуем линию с самой толстой
 
 ## Output
 
-<img src="/_images/strokeWeight_1.png" width="400" height="400" />
+<img src="./_images/strokeWeight_1.png" width="400" height="400" />

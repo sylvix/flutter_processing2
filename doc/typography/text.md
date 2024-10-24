@@ -20,27 +20,11 @@ text("word", 40, 360);
 
 ## Output 1
 
-<img src="/_images/text_1.png" width="400" height="400" />
+<img src="./_images/text_1.png" width="400" height="400" />
 
 <hr>
 
 ## Example 2
-
-```dart
-size(400, 400, P3D);
-textSize(128);
-fill(0, 408, 612, 816);
-text("word", 48, 180, -120);  // Specify a z-axis value
-text("word", 48, 240);  // Default depth, no z-value specified
-```
-
-## Output 2
-
-<img src="/_images/text_2.png" width="400" height="400" />
-
-<hr>
-
-## Example 3
 
 ```dart
 size(400, 400);
@@ -49,6 +33,6 @@ fill(200);
 text(s, 40, 40, 280, 320);  // Text wraps within text box
 ```
 
-## Output 3
+## Output 2
 
-<img src="/_images/text_3.png" width="400" height="400" />
+<img src="./_images/text_3.png" width="400" height="400" />

@@ -18,6 +18,7 @@ set frameRate(int frameRate)
 void setup() {
   frameRate(4); // Устанавливаем частоту кадров на 4 кадра в секунду
 }
+
 int pos = 0;
 void draw() {
   background(204); // Устанавливаем цвет фона

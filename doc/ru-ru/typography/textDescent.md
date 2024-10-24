@@ -27,4 +27,4 @@ text("dp", 160, base);  // Нарисовать текст на базовой �
 
 ## Результат
 
-<img src="/_images/textDescent_1.png" width="400" height="400" />
+<img src="./_images/textDescent_1.png" width="400" height="400" />

@@ -9,7 +9,7 @@ void background(num color1, [num? color2, num? color3])
 Невозможно использовать параметр альфа-прозрачности с фоновыми цветами на основной поверхности рисунка.
 
 
-| Пример                                          | Результат                                                              |
-|-------------------------------------------------|------------------------------------------------------------------------|
-| <pre lang="dart">background(51);</pre>          | <img src="/_images/background_2_gray.png" width="400" height="400" />  |
-| <pre lang="dart">background(152,190,100);</pre> | <img src="/_images/background_1_green.png" width="400" height="400" /> |
+| Пример                                          | Результат                                                             |
+|-------------------------------------------------|-----------------------------------------------------------------------|
+| <pre lang="dart">background(51);</pre>          | <img src="./_images/background_2_gray.png" width="400" height="400" /> |
+| <pre lang="dart">background(152,190,100);</pre> | <img src="./_images/background_1_green.png" width="400" height="400" /> |

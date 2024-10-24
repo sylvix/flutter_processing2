@@ -25,7 +25,7 @@ void setup() {  // setup() выполняется один раз
   frameRate(30);
 }
 
-void draw() {  // draw() выполняется бесконечно, пока не будет остановлено
+void draw() {  
   background(204);  // Очистить окно
   yPos = yPos - 1.0;  // Переместить линию вверх
   if (yPos < 0) {

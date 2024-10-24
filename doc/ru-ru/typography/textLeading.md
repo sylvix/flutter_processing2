@@ -28,4 +28,4 @@ text(lines, 280, 100);
 
 ## Результат
 
-<img src="/_images/textLeading_1.png" width="400" height="400" />
+<img src="./_images/textLeading_1.png" width="400" height="400" />

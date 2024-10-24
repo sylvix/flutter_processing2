@@ -25,4 +25,4 @@ line(sw, 200, sw, 400);
 
 ## Результат
 
-<img src="/_images/textWidth_1.png" width="400" height="400" />
+<img src="./_images/textWidth_1.png" width="400" height="400" />

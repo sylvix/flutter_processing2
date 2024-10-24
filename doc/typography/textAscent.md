@@ -26,4 +26,4 @@ text("dp", 160, base);  // Draw text on baseline
 
 ## Output
 
-<img src="/_images/textAscent_1.png" width="400" height="400" />
+<img src="./_images/textAscent_1.png" width="400" height="400" />

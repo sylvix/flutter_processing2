@@ -16,13 +16,12 @@ float d = width * 0.8;
 
 size(400, 400);
 
-// Drawing arcs using TWO_PI
-arc(x, y, d, d, 0, QUARTER_PI);   // Quarter circle
-arc(x, y, d - 80, d - 80, 0, HALF_PI); // Half circle
-arc(x, y, d - 160, d - 160, 0, PI); // Full semicircle
-arc(x, y, d - 240, d - 240, 0, TWO_PI); // Complete circle
+arc(x, y, d, d, 0, QUARTER_PI);
+arc(x, y, d - 80, d - 80, 0, HALF_PI);
+arc(x, y, d - 160, d - 160, 0, PI);
+arc(x, y, d - 240, d - 240, 0, TWO_PI);
 ```
 
 ## Output
 
-<img src="/_images/pi_1.png" width="400" height="400" />
+<img src="./_images/pi_1.png" width="400" height="400" />

@@ -17,7 +17,7 @@ arc(200, 200, 320, 320, 0, PI+QUARTER_PI, OPEN);
 
 ## Output 1
 
-<img src="/_images/arc_1.png" width="400" height="400" />
+<img src="./_images/arc_1.png" width="400" height="400" />
 
 ## Example 2
 
@@ -28,7 +28,7 @@ arc(200, 200, 320, 320, 0, PI+QUARTER_PI, CHORD);
 
 ## Output 2
 
-<img src="/_images/arc_2.png" width="400" height="400" />
+<img src="./_images/arc_2.png" width="400" height="400" />
 
 ## Example 3
 
@@ -39,4 +39,4 @@ arc(200, 200, 320, 320, 0, PI+QUARTER_PI, PIE);
 
 ## Output 3
 
-<img src="/_images/arc_3.png" width="400" height="400" />
+<img src="./_images/arc_3.png" width="400" height="400" />
