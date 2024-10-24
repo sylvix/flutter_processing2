@@ -3,7 +3,8 @@ part of '../_core.dart';
 mixin SketchImagePixels on BaseSketch {
   Future<Color> get(int x, int y) async {
     await _paintingContext.doIntermediateRasterization();
-    final sourceImage = (_paintingContext.intermediateImage ?? _paintingContext.publishedImage)!;
+    final sourceImage = (_paintingContext.intermediateImage ??
+        _paintingContext.publishedImage)!;
 
     final pixelDataOffset = _getBitmapPixelOffset(
       imageWidth: sourceImage.width,
@@ -12,7 +13,8 @@ mixin SketchImagePixels on BaseSketch {
     );
     final imageData = await sourceImage.toByteData();
     final rgbaColor = imageData!.getUint32(pixelDataOffset);
-    final argbColor = ((rgbaColor & 0x000000FF) << 24) | ((rgbaColor & 0xFFFFFF00) >> 8);
+    final argbColor =
+        ((rgbaColor & 0x000000FF) << 24) | ((rgbaColor & 0xFFFFFF00) >> 8);
     return Color(argbColor);
   }
 
@@ -23,7 +25,8 @@ mixin SketchImagePixels on BaseSketch {
     required int height,
   }) async {
     await _paintingContext.doIntermediateRasterization();
-    final sourceImage = (_paintingContext.intermediateImage ?? _paintingContext.publishedImage)!;
+    final sourceImage = (_paintingContext.intermediateImage ??
+        _paintingContext.publishedImage)!;
 
     final sourceData = await sourceImage.toByteData();
     final destinationData = Uint8List(width * height * 4);
@@ -74,13 +77,14 @@ mixin SketchImagePixels on BaseSketch {
     }
 
     final pixelIndex = _getBitmapPixelOffset(
-      imageWidth: _paintingContext.size.width.round(),
+      imageWidth: _paintingContext.width,
       x: x,
       y: y,
     );
 
     final argbColorInt = color.value;
-    final rgbaColorInt = ((argbColorInt & 0xFF000000) >> 24) | ((argbColorInt & 0x00FFFFFF) << 8);
+    final rgbaColorInt = ((argbColorInt & 0xFF000000) >> 24) |
+        ((argbColorInt & 0x00FFFFFF) << 8);
     pixels!.setUint32(pixelIndex, rgbaColorInt);
   }
 

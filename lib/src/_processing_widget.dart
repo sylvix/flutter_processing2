@@ -16,7 +16,8 @@ class Processing extends StatefulWidget {
   _ProcessingState createState() => _ProcessingState();
 }
 
-class _ProcessingState extends State<Processing> with SingleTickerProviderStateMixin {
+class _ProcessingState extends State<Processing>
+    with SingleTickerProviderStateMixin {
   final _controlKeys = <LogicalKeyboardKey>{
     LogicalKeyboardKey.control,
     LogicalKeyboardKey.controlLeft,
@@ -46,6 +47,7 @@ class _ProcessingState extends State<Processing> with SingleTickerProviderStateM
 
   late Ticker _ticker;
   late FocusNode _focusNode;
+  bool _isPixelRatioInitialized = false;
 
   Image? _currentImage;
 
@@ -173,12 +175,14 @@ class _ProcessingState extends State<Processing> with SingleTickerProviderStateM
 
   Offset _getCanvasOffsetFromWidgetOffset(Offset widgetOffset) {
     final myBox = context.findRenderObject();
-    final canvasBox = _sketchCanvasKey.currentContext!.findRenderObject() as RenderBox;
+    final canvasBox =
+        _sketchCanvasKey.currentContext!.findRenderObject() as RenderBox;
     return canvasBox.globalToLocal(widgetOffset, ancestor: myBox);
   }
 
   void _onPointerDown(PointerDownEvent event) {
-    if (event.kind != PointerDeviceKind.mouse && event.kind != PointerDeviceKind.touch) {
+    if (event.kind != PointerDeviceKind.mouse &&
+        event.kind != PointerDeviceKind.touch) {
       return;
     }
 
@@ -189,12 +193,15 @@ class _ProcessingState extends State<Processing> with SingleTickerProviderStateM
       .._mouseButton = mouseButton
       .._updateMousePosition(
         _getCanvasOffsetFromWidgetOffset(event.position),
-      )
-      ..mousePressed();
+      );
+    widget.sketch._paintingContext.startRecording();
+    widget.sketch.mousePressed();
+    widget.sketch._paintingContext.finishRecording();
   }
 
   void _onPointerMove(PointerMoveEvent event) {
-    if (event.kind != PointerDeviceKind.mouse && event.kind != PointerDeviceKind.touch) {
+    if (event.kind != PointerDeviceKind.mouse &&
+        event.kind != PointerDeviceKind.touch) {
       return;
     }
 
@@ -209,7 +216,8 @@ class _ProcessingState extends State<Processing> with SingleTickerProviderStateM
   }
 
   void _onPointerUp(PointerUpEvent event) {
-    if (event.kind != PointerDeviceKind.mouse && event.kind != PointerDeviceKind.touch) {
+    if (event.kind != PointerDeviceKind.mouse &&
+        event.kind != PointerDeviceKind.touch) {
       return;
     }
 
@@ -230,7 +238,8 @@ class _ProcessingState extends State<Processing> with SingleTickerProviderStateM
   }
 
   void _onPointerCancel(PointerCancelEvent event) {
-    if (event.kind != PointerDeviceKind.mouse && event.kind != PointerDeviceKind.touch) {
+    if (event.kind != PointerDeviceKind.mouse &&
+        event.kind != PointerDeviceKind.touch) {
       return;
     }
 
@@ -250,7 +259,8 @@ class _ProcessingState extends State<Processing> with SingleTickerProviderStateM
   }
 
   void _onPointerHover(PointerHoverEvent event) {
-    if (event.kind != PointerDeviceKind.mouse && event.kind != PointerDeviceKind.touch) {
+    if (event.kind != PointerDeviceKind.mouse &&
+        event.kind != PointerDeviceKind.touch) {
       return;
     }
 
@@ -271,6 +281,14 @@ class _ProcessingState extends State<Processing> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
+    if (!_isPixelRatioInitialized) {
+      MediaQueryData media = MediaQuery.of(context);
+      widget.sketch._paintingContext.pixelRatio = media.devicePixelRatio;
+      _isPixelRatioInitialized = true;
+    }
+
+    final pixelRatio = widget.sketch._paintingContext.pixelRatio;
+
     return Focus(
       focusNode: _focusNode,
       autofocus: true,
@@ -291,8 +309,8 @@ class _ProcessingState extends State<Processing> with SingleTickerProviderStateM
                   maxWidth: double.infinity,
                   maxHeight: double.infinity,
                   child: SizedBox(
-                    width: _currentImage!.width.toDouble(),
-                    height: _currentImage!.height.toDouble(),
+                    width: _currentImage!.width / pixelRatio,
+                    height: _currentImage!.height / pixelRatio,
                     child: RawImage(
                       key: _sketchCanvasKey,
                       image: _currentImage,

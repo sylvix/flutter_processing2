@@ -29,8 +29,8 @@ class _ImageMaskSketchDemoState extends State<ImageMaskSketchDemo> {
   Sketch createSketch() {
     return Sketch.simple(
       setup: (s) async {
-        s.size(width: 500, height: 500);
-        s.background(color: const Color(0xFFFFFFFF));
+        s.size(500, 500);
+        s.background(255);
 
         _image1 = await s.loadImage("assets/coffee.png");
         _image1.resize(width: 500, height: 500);

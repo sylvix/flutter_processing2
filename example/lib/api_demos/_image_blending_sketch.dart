@@ -30,8 +30,8 @@ class _ImageBlendSketchDemoState extends State<ImageBlendSketchDemo> {
   Sketch createSketch() {
     return Sketch.simple(
       setup: (s) async {
-        s.size(width: 500, height: 500);
-        s.background(color: const Color(0xFFFFFFFF));
+        s.size(500, 500);
+        s.background(255);
 
         _image1 = await s.loadImage("assets/coffee.png");
         _image2 = await s.loadImage("assets/audio-mixer.png");
@@ -39,10 +39,10 @@ class _ImageBlendSketchDemoState extends State<ImageBlendSketchDemo> {
 
         _image1.blend(
           _image1,
-          sourceRect:
-              Rect.fromLTRB(_image1.width.toDouble() / 2, 0, _image1.width.toDouble(), _image1.height.toDouble() / 2),
-          destRect:
-              Rect.fromLTRB(_image1.width.toDouble() / 2, 0, _image1.width.toDouble(), _image1.height.toDouble() / 2),
+          sourceRect: Rect.fromLTRB(_image1.width.toDouble() / 2, 0,
+              _image1.width.toDouble(), _image1.height.toDouble() / 2),
+          destRect: Rect.fromLTRB(_image1.width.toDouble() / 2, 0,
+              _image1.width.toDouble(), _image1.height.toDouble() / 2),
           mode: SketchBlendMode.add,
         );
         _image1.blend(

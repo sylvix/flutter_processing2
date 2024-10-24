@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
@@ -12,7 +11,8 @@ import 'package:golden_toolkit/golden_toolkit.dart';
 ///
 /// See [processingLegacySpecTest] for testing reference images
 /// from before Aug, 2021.
-void processingSpecTest(String description, Future<void> Function(WidgetTester) test) {
+void processingSpecTest(
+    String description, Future<void> Function(WidgetTester) test) {
   testGoldens(description, (tester) async {
     tester.view
       ..physicalSize = Size(400, 400)
@@ -30,7 +30,8 @@ void processingSpecTest(String description, Future<void> Function(WidgetTester) 
 ///
 /// See [processingSpecTest] for testing reference images from
 /// after Aug, 2021.
-void processingLegacySpecTest(String description, Future<void> Function(WidgetTester) test) {
+void processingLegacySpecTest(
+    String description, Future<void> Function(WidgetTester) test) {
   testGoldens(description, (tester) async {
     // All the legacy Processing reference examples (before Aug 2021)
     // were 100x100 px.
@@ -68,7 +69,8 @@ class TestAssetBundle implements AssetBundle {
   }
 
   @override
-  Future<T> loadStructuredData<T>(String key, Future<T> Function(String value) parser) {
+  Future<T> loadStructuredData<T>(
+      String key, Future<T> Function(String value) parser) {
     // TODO: implement loadStructuredData
     throw UnimplementedError();
   }
@@ -90,7 +92,8 @@ class TestAssetBundle implements AssetBundle {
   }
 
   @override
-  Future<T> loadStructuredBinaryData<T>(String key, FutureOr<T> Function(ByteData data) parser) {
+  Future<T> loadStructuredBinaryData<T>(
+      String key, FutureOr<T> Function(ByteData data) parser) {
     // TODO: implement loadStructuredBinaryData
     throw UnimplementedError();
   }

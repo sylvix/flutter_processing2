@@ -65,10 +65,3 @@ class Ellipse {
   final Rect _rect;
   Rect get rect => _rect;
 }
-
-enum ArcMode {
-  openStrokePieFill,
-  open,
-  chord,
-  pie,
-}
