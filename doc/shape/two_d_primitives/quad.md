@@ -15,4 +15,4 @@ quad(152, 124, 344, 80, 276, 252, 120, 304);
 
 ## Output
 
-<img src="/_images/quad_1.png" width="400" height="400" />
+<img src="./_images/quad_1.png" width="400" height="400" />

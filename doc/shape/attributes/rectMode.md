@@ -30,7 +30,7 @@ rect(100, 100, 200, 200);  // Draw gray rect using CORNERS mode
 
 ## Output 1
 
-<img src="/_images/rectMode_1.png" width="400" height="400" />
+<img src="./_images/rectMode_1.png" width="400" height="400" />
 
 ## Example 2
 
@@ -47,4 +47,4 @@ rect(200, 200, 120, 120);  // Draw gray rect using CENTER mode
 
 ## Output 2
 
-<img src="/_images/rectMode_2.png" width="400" height="400" />
+<img src="./_images/rectMode_2.png" width="400" height="400" />

@@ -21,4 +21,4 @@ line(80, 280, 320, 280);
 
 ## Output
 
-<img src="/_images/strokeWeight_1.png" width="400" height="400" />
+<img src="./_images/strokeWeight_1.png" width="400" height="400" />

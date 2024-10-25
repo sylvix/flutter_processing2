@@ -16,4 +16,4 @@ rect(120, 80, 220, 220); // Рисуем квадрат с заданными к
 
 ## Output
 
-<img src="/_images/fill_1.png" width="400" height="400" />
+<img src="./_images/fill_1.png" width="400" height="400" />

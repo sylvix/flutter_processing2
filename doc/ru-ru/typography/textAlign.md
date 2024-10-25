@@ -27,7 +27,7 @@ text("IJKL", 200, 280);
 
 ## Резултат 1
 
-<img src="/_images/textAlign_1.png" width="400" height="400" />
+<img src="./_images/textAlign_1.png" width="400" height="400" />
 
 <hr>
 
@@ -51,4 +51,4 @@ text("CENTER,TOP", 200, 280);
 
 ## Резултат 2
 
-<img src="/_images/textAlign_2.png" width="400" height="400" />
+<img src="./_images/textAlign_2.png" width="400" height="400" />

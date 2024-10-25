@@ -15,7 +15,7 @@ rect(120, 80, 220, 220); // Рисуем квадрат с обводкой
 
 ## Результат 1
 
-<img src="/_images/stroke_1.png" width="400" height="400" />
+<img src="./_images/stroke_1.png" width="400" height="400" />
 
 <hr>
 
@@ -29,4 +29,4 @@ rect(120, 80, 220, 220); // Рисуем квадрат с обводкой
 
 ## Результат 2
 
-<img src="/_images/stroke_2.png" width="400" height="400" />
+<img src="./_images/stroke_2.png" width="400" height="400" />

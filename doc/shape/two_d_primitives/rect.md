@@ -19,7 +19,7 @@ rect(120, 80, 220, 220);
 
 ## Output 1
 
-<img src="/_images/rect_1.png" width="400" height="400" />
+<img src="./_images/rect_1.png" width="400" height="400" />
 
 ## Example 2
 
@@ -30,7 +30,7 @@ rect(120, 80, 220, 220, 28);
 
 ## Output 2
 
-<img src="/_images/rect_2.png" width="400" height="400" />
+<img src="./_images/rect_2.png" width="400" height="400" />
 
 ## Example 3
 
@@ -41,4 +41,4 @@ rect(120, 80, 220, 220, 12, 24, 48, 72);
 
 ## Output 3
 
-<img src="/_images/rect_3.png" width="400" height="400" />
+<img src="./_images/rect_3.png" width="400" height="400" />

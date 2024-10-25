@@ -20,4 +20,4 @@ text("WORD", 40, 280);
 
 ## Результат
 
-<img src="/_images/textSize_1.png" width="400" height="400" />
+<img src="./_images/textSize_1.png" width="400" height="400" />

@@ -10,9 +10,9 @@ void quad(num x1, num y1, num x2, num y2, num x3, num y3, num x4, num y4)
 
 ```dart
 size(400, 400);
-quad(152, 124, 344, 80, 276, 252, 120, 304); // Рисуем четырехугольник с заданными координатами вершин
+quad(152, 124, 344, 80, 276, 252, 120, 304);
 ```
 
 ## Output
 
-<img src="/_images/quad_1.png" width="400" height="400" />
+<img src="./_images/quad_1.png" width="400" height="400" />

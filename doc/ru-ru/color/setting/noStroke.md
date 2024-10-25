@@ -16,4 +16,4 @@ rect(120, 80, 220, 220); // Рисуем квадрат без обводки
 
 ## Outputs
 
-<img src="/_images/noStroke_1.png" width="400" height="400" />
+<img src="./_images/noStroke_1.png" width="400" height="400" />

@@ -14,8 +14,7 @@ void textFont(String fontName)
 ```dart
 size(400, 400);
 PFont mono;
-// Шрифт "andalemo.ttf" должен находиться в
-// директории "data" текущего эскиза для успешной загрузки
+// Шрифт "andalemo.ttf" должен находиться в директории "data" текущего эскиза для успешной загрузки
 mono = createFont("andalemo.ttf", 128);
 background(0);
 textFont(mono);[textFont.md](textFont.md)
@@ -24,4 +23,4 @@ text("word", 48, 240);
 
 ## Результат
 
-<img src="/_images/textFont_1.png" width="400" height="400" />
+<img src="./_images/textFont_1.png" width="400" height="400" />

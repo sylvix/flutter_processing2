@@ -23,4 +23,4 @@ text("word", 48, 240);
 
 ## Output
 
-<img src="/_images/textFont_1.png" width="400" height="400" />
+<img src="./_images/textFont_1.png" width="400" height="400" />

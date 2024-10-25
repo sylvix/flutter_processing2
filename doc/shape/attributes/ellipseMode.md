@@ -30,7 +30,7 @@ ellipse(200, 200, 120, 120);  // Draw gray ellipse using CENTER mode
 
 ## Output 1
 
-<img src="/_images/ellipseMode_1.png" width="400" height="400" />
+<img src="./_images/ellipseMode_1.png" width="400" height="400" />
 
 ## Example 2
 
@@ -48,4 +48,4 @@ ellipse(100, 100, 200, 200);  // Draw gray ellipse using CORNERS mode
 
 ## Output 2
 
-<img src="/_images/ellipseMode_2.png" width="400" height="400" />
+<img src="./_images/ellipseMode_2.png" width="400" height="400" />

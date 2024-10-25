@@ -29,7 +29,7 @@ rect(100, 100, 200, 200);  // Рисуем серый прямоугольник
 
 ## Результат 1
 
-<img src="/_images/rectMode_1.png" width="400" height="400" />
+<img src="./_images/rectMode_1.png" width="400" height="400" />
 
 ## Пример 2
 
@@ -46,4 +46,4 @@ rect(200, 200, 120, 120);  // Рисуем серый прямоугольник
 
 ## Результат 2
 
-<img src="/_images/rectMode_2.png" width="400" height="400" />
+<img src="./_images/rectMode_2.png" width="400" height="400" />

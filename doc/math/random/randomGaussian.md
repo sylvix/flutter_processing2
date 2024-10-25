@@ -20,7 +20,7 @@ for (int y = 0; y < 400; y++) {
 
 ## Output 1
 
-<img src="/_images/randomGaussian_1.png" width="400" height="400" />
+<img src="./_images/randomGaussian_1.png" width="400" height="400" />
 
 ## Example 2
 
@@ -50,4 +50,4 @@ void draw() {
 
 ## Output 2
 
-<img src="/_images/randomGaussian_2.png" width="400" height="400" />
+<img src="./_images/randomGaussian_2.png" width="400" height="400" />

@@ -21,27 +21,11 @@ text("слово", 40, 360);
 
 ## Результат 1
 
-<img src="/_images/text_1.png" width="400" height="400" />
+<img src="./_images/text_1.png" width="400" height="400" />
 
 <hr>
 
 ## Пример 2
-
-```dart
-size(400, 400, P3D);
-textSize(128);
-fill(0, 408, 612, 816);
-text("слово", 48, 180, -120);  // Указать значение по оси z
-text("слово", 48, 240);  // Значение по умолчанию, z-значение не указано
-```
-
-## Результат 2
-
-<img src="/_images/text_2.png" width="400" height="400" />
-
-<hr>
-
-## Пример 3
 
 ```dart
 size(400, 400);
@@ -50,6 +34,6 @@ fill(200);
 text(s, 40, 40, 280, 320);  // Текст оборачивается в текстовом блоке
 ```
 
-## Результат 3
+## Результат 2
 
-<img src="/_images/text_3.png" width="400" height="400" />
+<img src="./_images/text_3.png" width="400" height="400" />

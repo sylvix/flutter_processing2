@@ -13,4 +13,4 @@ void line(num x1, num y1, num x2, num y2)
 
 | Пример | Результат |
 | ------ | --------- |
-| <pre lang="dart">line(120, 80, 340, 300);</pre> | <img src="/_images/line_1.png" width="400" height="400" /> |
+| <pre lang="dart">line(120, 80, 340, 300);</pre> | <img src="./_images/line_1.png" width="400" height="400" /> |

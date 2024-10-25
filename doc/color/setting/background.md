@@ -8,7 +8,7 @@ The `background()` function sets the color used for the background of the Proces
 
 It is not possible to use the transparency alpha parameter with background colors on the main drawing surface.
 
-| Example                                         | Result                                                                 |
-| ----------------------------------------------- | ---------------------------------------------------------------------- |
-| <pre lang="dart">background(51);</pre>          | <img src="/_images/background_2_gray.png" width="400" height="400" />  |
-| <pre lang="dart">background(152,190,100);</pre> | <img src="/_images/background_1_green.png" width="400" height="400" /> |
+| Example                                         | Result                                                                |
+| ----------------------------------------------- | --------------------------------------------------------------------- |
+| <pre lang="dart">background(51);</pre>          | <img src="./_images/background_2_gray.png" width="400" height="400" /> |
+| <pre lang="dart">background(152,190,100);</pre> | <img src="./_images/background_1_green.png" width="400" height="400" /> |

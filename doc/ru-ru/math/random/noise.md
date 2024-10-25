@@ -33,7 +33,7 @@ void draw() {
   for (int x = 0; x < width; x++) {
     float noiseVal = noise((mouseX + x) * noiseScale, mouseY * noiseScale);
     stroke(noiseVal * 255); // Устанавливаем цвет на основе значения шума
-    line(x, mouseY + noiseVal * 80, x, height); // Рисуем линию с эффектом шума
+    line(x, mouseY + noiseVal * 80, x, height);
   }
 }
 ```

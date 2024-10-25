@@ -16,4 +16,4 @@ square(120, 100, 220);
 
 ## Output
 
-<img src="/_images/square_1.png" width="400" height="400" />
+<img src="./_images/square_1.png" width="400" height="400" />
