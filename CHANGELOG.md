@@ -11,3 +11,5 @@
 ## [2.0.0-dev.3] - Updated meta information (Oct 12, 2024)
 
 ## [2.0.0-dev.4] - Updated docs, fixed rect APIs (Oct 22, 2024)
+
+## [2.0.0-dev.5] - Fixed `rectMode()` and `ellipseMode()` not resetting to defaults with each `draw` cycle (Nov 5, 2024)

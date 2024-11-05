@@ -96,8 +96,9 @@ class Sketch extends BaseSketch
       return;
     }
 
+    rectMode(CORNER);
+    ellipseMode(CENTER);
     _isDrawing = true;
-
     _paintingContext.startRecording();
 
     // Run Processing setup method.
