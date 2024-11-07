@@ -13,3 +13,5 @@
 ## [2.0.0-dev.4] - Updated docs, fixed rect APIs (Oct 22, 2024)
 
 ## [2.0.0-dev.5] - Fixed `rectMode()` and `ellipseMode()` not resetting to defaults with each `draw` cycle (Nov 5, 2024)
+
+## [2.0.0-dev.6] - Fixed `RIGHT` and `CENTER` horizontal text alignment (Nov 7, 2024)

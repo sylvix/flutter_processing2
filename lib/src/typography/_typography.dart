@@ -40,7 +40,6 @@ mixin SketchTypography on BaseSketch {
     final paragraphBuilder = ParagraphBuilder(ParagraphStyle(
       fontFamily: _fontName,
       fontSize: _fontSize,
-      textAlign: _toFlutterAlign(_textAlignHorizontal),
     ))
       ..pushStyle(TextStyle(
         color: _paintingContext.fillPaint.color,
