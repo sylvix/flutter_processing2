@@ -47,7 +47,7 @@ https://github.com/sylvix/sketch_app
 ### Setting
 
 | Feature                                       | Description                                                     |
-| --------------------------------------------- | --------------------------------------------------------------- |
+|-----------------------------------------------|-----------------------------------------------------------------|
 | [`background()`](color/setting/background.md) | Sets the color used for the background of the Processing window |
 | [`fill()`](color/setting/fill.md)             | Sets the color used to fill shapes                              |
 | [`noFill()`](color/setting/noFill.md)         | Disables filling geometry                                       |
@@ -60,7 +60,7 @@ https://github.com/sylvix/sketch_app
 ### Attributes
 
 | Feature                                              | Description                                                                       |
-| ---------------------------------------------------- | --------------------------------------------------------------------------------- |
+|------------------------------------------------------|-----------------------------------------------------------------------------------|
 | [`strokeWeight()`](shape/attributes/strokeWeight.md) | Sets the width of the stroke used for lines, points, and the border around shapes |
 | [`ellipseMode()`](shape/attributes/ellipseMode.md)   | The origin of the ellipse is modified by the ellipseMode() function               |
 | [`rectMode()`](shape/attributes/rectMode.md)         | Modifies the location from which rectangles draw                                  |
@@ -68,7 +68,7 @@ https://github.com/sylvix/sketch_app
 ### 2D Primitives
 
 | Feature                                            | Description                                                        |
-| -------------------------------------------------- | ------------------------------------------------------------------ |
+|----------------------------------------------------|--------------------------------------------------------------------|
 | [`point()`](shape/two_d_primitives/point.md)       | Draws a point, a coordinate in space at the dimension of one pixel |
 | [`line()`](shape/two_d_primitives/line.md)         | Draws a line (a direct path between two points) to the screen      |
 | [`circle()`](shape/two_d_primitives/circle.md)     | Draws a circle to the screen                                       |
@@ -84,7 +84,7 @@ https://github.com/sylvix/sketch_app
 ### Mouse
 
 | Feature                                           | Description                                                                                                       |
-| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+|---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | [`mouseX`](input/mouse/mouseX.md)                 | The property that always contains the current horizontal coordinate of the mouse                                  |
 | [`mouseY`](input/mouse/mouseY.md)                 | The property that always contains the current vertical coordinate of the mouse                                    |
 | [`pmouseX`](input/mouse/pmouseX.md)               | The property that always contains the horizontal position of the mouse in the frame previous to the current frame |
@@ -103,7 +103,7 @@ https://github.com/sylvix/sketch_app
 ### Random
 
 | Feature                                             | Description                                                                                    |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------|
 | [`randomSeed()`](math/random/randomSeed.md)         | Sets the seed value for random()                                                               |
 | [`random()`](math/random/random.md)                 | Generates random numbers                                                                       |
 | [`noiseSeed()`](math/random/noiseSeed.md)           | Sets the seed value for noise()                                                                |
@@ -114,7 +114,7 @@ https://github.com/sylvix/sketch_app
 ## Constants
 
 | Feature                                 | Description                                                              |
-| --------------------------------------- | ------------------------------------------------------------------------ |
+|-----------------------------------------|--------------------------------------------------------------------------|
 | [`HALF_PI`](constants/HALF_PI.md)       | HALF_PI is a mathematical constant with the value 1.57079632679489661923 |
 | [`PI`](constants/PI.md)                 | PI is a mathematical constant with the value 3.14159265358979323846      |
 | [`QUARTER_PI`](constants/QUARTER_PI.md) | QUARTER_PI is a mathematical constant with the value 0.7853982           |
@@ -124,7 +124,7 @@ https://github.com/sylvix/sketch_app
 ## Structure
 
 | Feature                           | Description                                                                                                                                             |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`setup()`](structure/setup.md)   | The setup() function is called once when the program starts                                                                                             |
 | [`draw()`](structure/draw.md)     | Called directly after setup() and continuously executes the lines of code contained inside its block until the program is stopped or noLoop() is called |
 | [`loop()`](structure/loop.md)     | Causes Processing to continuously execute the code within draw()                                                                                        |
@@ -133,7 +133,7 @@ https://github.com/sylvix/sketch_app
 ## Typography
 
 | Feature                                      | Description                                                       |
-| -------------------------------------------- | ----------------------------------------------------------------- |
+|----------------------------------------------|-------------------------------------------------------------------|
 | [`text()`](typography/text.md)               | Draws text to the screen                                          |
 | [`textAlign()`](typography/textAlign.md)     | Sets the current alignment for drawing text                       |
 | [`textAscent()`](typography/textAscent.md)   | Returns ascent of the current font at its current size            |
