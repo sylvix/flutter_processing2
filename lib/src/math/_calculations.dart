@@ -14,7 +14,10 @@ mixin SketchMathCalculations {
     return value.clamp(min, max);
   }
 
-  num dist(Offset p1, Offset p2) {
+  /// Calculates the distance between two points.
+  num dist(num x1, num y1, num x2, num y2) {
+    final p1 = Offset(x1.toDouble(), y1.toDouble());
+    final p2 = Offset(x2.toDouble(), y2.toDouble());
     return (p2 - p1).distance;
   }
 
@@ -26,6 +29,9 @@ mixin SketchMathCalculations {
     return value.floor();
   }
 
+  /// Calculates a number between two numbers at a specific increment.
+  /// The [percent] parameter is the amount to interpolate between the two values where 0.0 equal to the first point, 0.1 is very near the first point, 0.5 is half-way in between, etc.
+  /// The [lerp] function is convenient for creating motion along a straight path and for drawing dotted lines.
   double lerp(num start, num end, double percent) {
     return lerpDouble(start, end, percent)!;
   }
@@ -38,6 +44,7 @@ mixin SketchMathCalculations {
     return math.sqrt(math.pow(x, 2) + math.pow(y, 2) + math.pow(z, 2));
   }
 
+  /// Re-maps a number from one range to another.
   num map(num value, num domainMin, num domainMax, num rangeMin, num rangeMax) {
     return (value - domainMin) * (rangeMax - rangeMin) / (domainMax - domainMin) + rangeMin;
   }

@@ -15,3 +15,5 @@
 ## [2.0.0-dev.5] - Fixed `rectMode()` and `ellipseMode()` not resetting to defaults with each `draw` cycle (Nov 5, 2024)
 
 ## [2.0.0-dev.6] - Fixed `RIGHT` and `CENTER` horizontal text alignment (Nov 7, 2024)
+
+## [2.0.0-dev.7] - Changed `dist()` API, added some docs for `_calculations.dart` (Dec 2, 2024)

@@ -9,10 +9,9 @@ void ellipse(num a, num b, num c, num d)
 ## Пример
 
 ```dart
-size(400, 400);              // Устанавливаем размер окна 400 на 400 пикселей
 ellipse(224, 184, 220, 220); // Рисуем круг (эллипс с равными размерами) с центром в (224, 184) и диаметром 220
 ```
 
-## Резултат
+## Результат
 
-<img src="./_images/ellipse_1.png" width="400" height="400" />
+<img src="./_images/ellipse_1.png" width="400" height="400" alt="Ellipse example 1" />

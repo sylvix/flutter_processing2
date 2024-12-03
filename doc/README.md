@@ -100,6 +100,14 @@ https://github.com/sylvix/sketch_app
 
 ## Math
 
+### Calculations
+
+| Feature                               | Description                                                     |
+|---------------------------------------|-----------------------------------------------------------------|
+| [`dist()`](math/calculations/dist.md) | Calculates the distance between two points                      |
+| [`lerp()`](math/calculations/lerp.md) | Calculates a number between two numbers at a specific increment |
+| [`map()`](math/calculations/map.md)   | Re-maps a number from one range to another                      |
+
 ### Random
 
 | Feature                                             | Description                                                                                    |

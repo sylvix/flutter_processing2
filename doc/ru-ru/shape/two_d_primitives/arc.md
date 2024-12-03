@@ -11,7 +11,6 @@ void arc(num a, num b, num c, num d, num start, num stop, [String mode = OPEN_ST
 ## Пример 1
 
 ```dart
-size(400, 400); // Устанавливаем размер окна 400 на 400 пикселей
 arc(200, 200, 320, 320, 0, PI + QUARTER_PI, OPEN); // Рисуем открытую дугу
 ```
 
@@ -22,7 +21,6 @@ arc(200, 200, 320, 320, 0, PI + QUARTER_PI, OPEN); // Рисуем открыт�
 ## Пример 2
 
 ```dart
-size(400, 400);
 arc(200, 200, 320, 320, 0, PI + QUARTER_PI, CHORD); // Рисуем дугу с режимом CHORD
 ```
 
@@ -33,7 +31,6 @@ arc(200, 200, 320, 320, 0, PI + QUARTER_PI, CHORD); // Рисуем дугу с 
 ## Пример 3
 
 ```dart
-size(400, 400);
 arc(200, 200, 320, 320, 0, PI + QUARTER_PI, PIE); // Рисуем дугу с режимом PIE
 ```
 
