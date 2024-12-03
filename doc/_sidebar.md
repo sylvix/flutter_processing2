@@ -8,6 +8,7 @@
   - [Input](/?id=input)
     - [Mouse](/?id=mouse)
   - [Math](/?id=math)
+    - [Calculations](/?id=calculations)
     - [Random](/?id=random)
   - [Constants](/?id=constants)
   - [Structure](/?id=structure)
